@@ -12,8 +12,9 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { FEATURES, PLACEHOLDERS, STEPS, SUGGESTIONS } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { SignInButton, useAuth } from "@clerk/nextjs";
+import { PricingTable, SignInButton, useAuth } from "@clerk/nextjs";
 import { ArrowRight, ChevronRight, Divide, Zap } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
@@ -327,7 +328,13 @@ export default function Home() {
           </p>
         </div>
 
-        <div>{/* pricing table */}</div>
+        <div className="mx-auto max-w-5xl">
+          <PricingTable
+            checkoutProps={{
+              appearance: { elements: { drawerRoot: { zIndex: 2000 } } },
+            }}
+          />
+        </div>
       </section>
 
       <section className="h-56 relative  mx-auto mb-32 max-w-5xl overflow-hidden rounded-2xl border border-white/8 px-10 py-24 text-center">
@@ -351,6 +358,17 @@ export default function Home() {
           </div>
         </StarsBackground>
       </section>
+
+      <footer className="relative z-10 border-t border-white/7 py-12 mx-auto px-6 flex items-center justify-center gap-1 text-stone-400">
+        <span>Made with ❤️ by</span>
+        <Link
+          href="https://mohsinjameel.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          mohsinjameel.dev
+        </Link>
+      </footer>
     </main>
   );
 }
