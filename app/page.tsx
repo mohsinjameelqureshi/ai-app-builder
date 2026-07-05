@@ -13,7 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { FEATURES, PLACEHOLDERS, STEPS, SUGGESTIONS } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { PricingTable, SignInButton, useAuth } from "@clerk/nextjs";
-import { ArrowRight, ChevronRight, Divide, Zap } from "lucide-react";
+import { ArrowRight, ChevronRight, Zap } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
