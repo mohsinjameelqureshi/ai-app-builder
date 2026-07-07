@@ -12,7 +12,14 @@ const WorkSpacePage = async ({ searchParams }: WorkSpacePageProps) => {
 
   const { prompt, id } = await searchParams;
 
-  return <WorkspaceClient />;
+  return (
+    <WorkspaceClient
+      intialPrompt={prompt ?? null}
+      userCredits={10}
+      userId={userId}
+      userPlan="free"
+    />
+  );
 };
 
 export default WorkSpacePage;
